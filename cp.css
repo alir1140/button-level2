@@ -1,0 +1,43 @@
+
+body{
+    background: rgb(176, 157, 157);
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.btn{
+    background: rgb(255, 0, 0);
+    border-color: rgb(159, 140, 140);
+    color: rgb(255, 255, 255);
+    padding: 80px 100px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+
+}
+.btn span{
+    position: relative;
+    z-index: 1;
+}
+.btn::before{
+    content: "";
+    background-color: firebrick;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: var(--xPos);
+    top: var(--yPos);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition: width 5s, height 5s;
+
+}
+.btn:hover::before{
+    width: 800px;
+    height: 800px;
+}
